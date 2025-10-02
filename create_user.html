@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Создать пользователя - Мой Блог{% endblock %}
+
+{% block content %}
+    <h1>👤 Создать нового пользователя</h1>
+    
+    {% if error %}
+    <div style="background: #ffebee; color: #c62828; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+        ❌ {{ error }}
+    </div>
+    {% endif %}
+    
+    <div class="post">
+        <form action="/users/create" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="Введите email">
+                <small>Должен содержать @</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="login">Логин:</label>
+                <input type="text" id="login" name="login" required 
+                       placeholder="Введите логин" minlength="3">
+                <small>Минимум 3 символа</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="Введите пароль" minlength="6">
+                <small>Минимум 6 символов</small>
+            </div>
+            
+            <div class="actions">
+                <button type="submit" class="btn btn-success">👤 Создать пользователя</button>
+                <a href="/posts/create" class="btn">📝 Создать пост</a>
+                <a href="/" class="btn">❌ Отмена</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

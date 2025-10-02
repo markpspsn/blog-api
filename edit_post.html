@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Редактировать пост - Мой Блог{% endblock %}
+
+{% block content %}
+    <div class="form-section">
+        <h1 class="form-title">✏️ Редактировать пост</h1>
+        
+        <div class="stats">
+            <strong>Статистика:</strong> 👍 {{ post.likes }} лайков | 👎 {{ post.dislikes }} дизлайков
+        </div>
+        
+        <form action="/posts/{{ post.id }}/edit" method="post">
+            <div class="form-group">
+                <label for="title">Заголовок поста:</label>
+                <input type="text" id="title" name="title" required 
+                       value="{{ post.title }}" minlength="3" maxlength="100">
+                <span class="form-help">Минимум 3 символа, максимум 100</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="content">Текст поста:</label>
+                <textarea id="content" name="content" required 
+                          minlength="10">{{ post.content }}</textarea>
+                <span class="form-help">Минимум 10 символов</span>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn">💾 Сохранить изменения</button>
+                <a href="/posts/{{ post.id }}" class="btn">❌ Отмена</a>
+            </div>
+        </form>
+        
+        <div class="danger-zone">
+            <h3>⚡ Опасная зона</h3>
+            <p>Удаление поста нельзя отменить. Будьте осторожны!</p>
+            <form action="/posts/{{ post.id }}/delete" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger" 
+                        onclick="return confirm('Вы уверены, что хотите удалить этот пост?')">
+                    🗑️ Удалить пост
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

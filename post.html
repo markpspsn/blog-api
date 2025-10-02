@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - Мой Блог{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <h1>{{ post.title }}</h1>
+        <div class="post-content">
+            {{ post.content }}
+        </div>
+        <div class="post-meta">
+            <strong>Автор ID:</strong> {{ post.authorId }} | 
+            <strong>Создан:</strong> {{ post.createdAt.strftime('%Y-%m-%d %H:%M') }} |
+            <strong>Обновлен:</strong> {{ post.updatedAt.strftime('%Y-%m-%d %H:%M') }}<br>
+            <strong>👍 {{ post.likes }} лайков</strong> | <strong>👎 {{ post.dislikes }} дизлайков</strong>
+        </div>
+        
+        <div class="actions">
+            <form action="/posts/{{ post.id }}/like" method="post" style="display: inline;">
+                <button type="submit" class="btn like-btn">👍 Лайк ({{ post.likes }})</button>
+            </form>
+            <form action="/posts/{{ post.id }}/dislike" method="post" style="display: inline;">
+                <button type="submit" class="btn dislike-btn">👎 Дизлайк ({{ post.dislikes }})</button>
+            </form>
+        </div>
+        
+        <div class="actions">
+            <a href="/posts/{{ post.id }}/edit" class="btn">✏️ Редактировать</a>
+            <a href="/" class="btn">← Назад к списку</a>
+        </div>
+    </div>
+{% endblock %}
