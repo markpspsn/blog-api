@@ -1,0 +1,15 @@
+{
+  "posts": {
+    "10": {
+      "id": 10,
+      "authorId": 1,
+      "title": "aaa",
+      "content": "aaaaaaaaaa",
+      "createdAt": "2025-10-02T15:14:00.287498",
+      "updatedAt": "2025-10-02T15:14:00.287498",
+      "likes": 1,
+      "dislikes": 0
+    }
+  },
+  "next_post_id": 11
+}

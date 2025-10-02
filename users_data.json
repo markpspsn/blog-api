@@ -1,0 +1,37 @@
+{
+  "users": {
+    "1": {
+      "id": 1,
+      "email": "test@mail.ru",
+      "login": "testuser",
+      "password": "123456",
+      "createdAt": "2025-10-02T13:23:11.946258",
+      "updatedAt": "2025-10-02T13:23:11.946258"
+    },
+    "2": {
+      "id": 2,
+      "email": "ars9774554627@mail.ru",
+      "login": "ars9774554627",
+      "password": "фкы2008",
+      "createdAt": "2025-10-02T13:42:25.934876",
+      "updatedAt": "2025-10-02T13:42:25.934876"
+    },
+    "3": {
+      "id": 3,
+      "email": "ars977455467@mail.ru",
+      "login": "ars977455427",
+      "password": "п8пгшгшп",
+      "createdAt": "2025-10-02T13:56:59.837404",
+      "updatedAt": "2025-10-02T13:56:59.837404"
+    },
+    "4": {
+      "id": 4,
+      "email": "ars97745546@mail.ru",
+      "login": "ars97745542",
+      "password": "ughhhvvylyvi",
+      "createdAt": "2025-10-02T13:58:02.242186",
+      "updatedAt": "2025-10-02T13:58:02.242186"
+    }
+  },
+  "next_user_id": 5
+}
